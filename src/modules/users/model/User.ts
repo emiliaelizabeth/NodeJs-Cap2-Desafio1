@@ -1,20 +1,20 @@
-import { v4 as uuidV4 } from "uuid";
+import { v4 as uuidV4, validate } from "uuid";
 
 class User {
-  
   id?: string;
   name: string;
-  admin: boolean;
+  admin?: boolean;
   email: string;
-  created_at: Date;
-  updated_at: Date;
+  created_at?: Date;
+  updated_at?: Date;
 
 
   constructor() {
     if ( !this.id ) {
      this.id = uuidV4();
      this.admin = false;
-     this.created_at = new(Date);
+     this.created_at = new (Date);
+     this.updated_at = new (Date);     
     }
   }   
 };
